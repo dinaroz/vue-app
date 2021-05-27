@@ -33,7 +33,7 @@
               v-for="row in filtered"
               :key="row.id"
             >
-              <div class="">
+              <div class="" style="margin-bottom: 15px">
                 <div class="circle-wrapper">
                   <div class="circle"></div>
                 </div>
@@ -42,10 +42,10 @@
                     {{ row.taskId | uppercaseFirstLetter }}
                   </p>
                   <div class="row">
-                    <div class="col-10 text-muted">
-                      {{ row.title | uppercaseFirstLetter }}
+                    <div class="col-md-10 text-muted">
+                      {{ row.title | uppercaseFirstLetter | shortDescription }}
                     </div>
-                    <div class="col-md-2 offset-md-10" style="text-align: end">
+                    <div class="col" style="text-align: end">
                       <span class="criteria-tag" style="">
                         CRITERIA {{ row.criteria }}</span
                       >
@@ -133,6 +133,13 @@ export default {
     uppercaseFirstLetter(value) {
       return value.charAt(0).toUpperCase() + value.slice(1);
     },
+    shortDescription(value) {
+      if (value && value.length > 20) {
+        return value.substring(0, 20) + "...";
+      } else {
+        return value;
+      }
+    },
   },
   created() {},
 };
@@ -148,7 +155,7 @@ export default {
   background-color: var(--bg-card);
   line-height: 2px;
   position: relative;
-  height: 85px;
+  //   height: 85px;
   border-bottom: 3px solid var(--border);
 }
 
@@ -164,7 +171,7 @@ export default {
 .circle-wrapper {
   background-color: var(--bg-card);
   float: left;
-  height: 85px;
+  height: 89px;
   margin-top: -15px;
   margin-left: -15px;
 }
