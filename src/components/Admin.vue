@@ -41,10 +41,19 @@
                   <p class="card-title">
                     {{ row.taskId | uppercaseFirstLetter }}
                   </p>
-                  <p class="text-muted">
-                    {{ row.title | uppercaseFirstLetter }} || criteria :
-                    {{ row.criteria }}
-                  </p>
+                  <div class="row">
+                    <div class="col text-muted">
+                      {{ row.title | uppercaseFirstLetter }}
+                    </div>
+                    <!-- <div class="col text-muted">
+                    {{ row.title | uppercaseFirstLetter }} 
+                  </div> -->
+                    <div class="col" style="text-align: end">
+                      <span class="criteria-tag" style="">
+                        CRITERIA {{ row.criteria }}</span
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,6 +174,7 @@ export default {
 .card-text {
   display: inline-block;
   margin-left: 15px;
+  width: 90%;
 }
 .card-title {
   font-size: 16px;
@@ -197,5 +207,13 @@ export default {
 input {
   padding: 10px 30px;
   font-size: 16px;
+}
+.criteria-tag {
+  border: 1px solid var(--text-muted);
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px;
 }
 </style>
