@@ -42,13 +42,10 @@
                     {{ row.taskId | uppercaseFirstLetter }}
                   </p>
                   <div class="row">
-                    <div class="col text-muted">
+                    <div class="col-10 text-muted">
                       {{ row.title | uppercaseFirstLetter }}
                     </div>
-                    <!-- <div class="col text-muted">
-                    {{ row.title | uppercaseFirstLetter }} 
-                  </div> -->
-                    <div class="col" style="text-align: end">
+                    <div class="col-md-2 offset-md-10" style="text-align: end">
                       <span class="criteria-tag" style="">
                         CRITERIA {{ row.criteria }}</span
                       >
